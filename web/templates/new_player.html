@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+{% block content %}
+     <form action = "{{ url_for('register_player') }}" method = "POST">
+    <h1>Registrar nuevo jugador</h1>
+        <p>Equipo<br>
+            <select name="team_name" method="GET" action="/">
+            {% for team in teams %}
+            <option value="{{team}}" SELECTED>{{team}}</option>"
+            {% endfor %}
+            </select>
+        </p>
+        <p>Url foto del ugador<br>
+            <input type="url" name="player_image">
+        </p>
+        <p>Nombre<br>
+            <input type="text" name="first_name">
+        </p>
+        <p>Apellido<br>
+            <input type="text" name="lastname">
+        </p>
+        <p>Fecha de nacimiento<br>
+            <input type="date" name="birth_date">
+        </p>
+        <p>Posicion en la que juega<br>
+            <input type="text" name="position">
+        </p>
+        <p>Numero de la camiseta<br>
+            <input type="number" name="shirt_number">
+        </p>
+        <p>Es titular<br>
+            <input type="radio" name="is_titular" value="True"> Si<br>
+            <input type="radio" name="is_titular" value="False" checked> No<br>
+        </p>
+     <input type="submit">
+     </form>
+{% endblock %}

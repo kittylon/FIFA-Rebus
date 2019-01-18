@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% block content %}
+     <form action = "{{ url_for('register_team') }}" method = "POST">
+    <h1>Registrar nuevo equipo</h1>
+        <p>Pais<br>
+            <select name="team_name" method="GET" action="/">
+            {% for country in countries %}
+            <option value="{{country}}" SELECTED>{{country}}</option>"
+            {% endfor %}
+            </select>
+        </p>
+        <p>Url de la bandera<br>
+            <input type="url" name="flag_image">
+        </p>
+        <p>Url del escudo<br>
+            <input type="url" name="team_emblema">
+        </p>
+     <input type="submit">
+     </form>
+{% endblock %}
